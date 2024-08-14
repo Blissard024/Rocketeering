@@ -9,39 +9,50 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip success; 
     [SerializeField] AudioClip defeat; 
     AudioSource audioSource;
+    bool isTransitioning = false;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
-    private void OnCollisionEnter(Collision other) {
+    private void OnCollisionEnter(Collision other) 
+    {
+        if (isTransitioning){return;}
+
         switch(other.gameObject.tag) 
         {
+
             case "Launching Pad":
-                Debug.Log("This thing is friendly");
                 break;
 
             case "Landing Pad":
                 StartSuccessSequence();
-                Debug.Log("Congrats!");
                 break;
 
             default:
-                Debug.Log("Sorry you blew up!");
                 StartCrashSequence();
                 break;
-
         } 
+        
+
+
+  
     }
 
     private void StartSuccessSequence()
     {
+        Debug.Log("Congrats!");
+        isTransitioning = true;
+        audioSource.Stop();
         audioSource.PlayOneShot(success);
         Invoke("LoadNextLevel", levelLoadDelay);
     }
 
     void StartCrashSequence()
     {
+        Debug.Log("Sorry you blew up!");
+        isTransitioning = true;
+        audioSource.Stop();
         audioSource.PlayOneShot(defeat);
         GetComponent<Movements>().enabled = false;
         Invoke("ReloadLevel", levelLoadDelay);

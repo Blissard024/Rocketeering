@@ -425,30 +425,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2082252135, guid: ab39f41acaef90247b936048af01b95b, type: 3}
-      propertyPath: mainEngine
-      value: 
-      objectReference: {fileID: 8300000, guid: 078185819befd4b4f9726cfa50adf532, type: 3}
-    - target: {fileID: 2082252135, guid: ab39f41acaef90247b936048af01b95b, type: 3}
-      propertyPath: mainThrust
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 2082252140, guid: ab39f41acaef90247b936048af01b95b, type: 3}
-      propertyPath: m_Drag
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2082252140, guid: ab39f41acaef90247b936048af01b95b, type: 3}
-      propertyPath: m_Constraints
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 2082252141, guid: ab39f41acaef90247b936048af01b95b, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2082252141, guid: ab39f41acaef90247b936048af01b95b, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2359525592263453061, guid: ab39f41acaef90247b936048af01b95b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -499,24 +475,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab39f41acaef90247b936048af01b95b, type: 3}
---- !u!1 &2082252134 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7109177971357963461, guid: ab39f41acaef90247b936048af01b95b, type: 3}
-  m_PrefabInstance: {fileID: 1990817363}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2082252149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082252134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b1387e9c71a2834185e91b91f1972cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelLoadDelay: 2
 --- !u!1001 &3599789978566200135
 PrefabInstance:
   m_ObjectHideFlags: 0
