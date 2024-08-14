@@ -15,7 +15,7 @@ public class CollisionHandler : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
     private void OnCollisionEnter(Collision other) {
-        switch(other.gameObject.tag)
+        switch(other.gameObject.tag) 
         {
             case "Launching Pad":
                 Debug.Log("This thing is friendly");
