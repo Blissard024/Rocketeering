@@ -1,6 +1,7 @@
 
+using System;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other) {
@@ -20,8 +21,15 @@ public class CollisionHandler : MonoBehaviour
 
             default:
                 Debug.Log("Sorry you blew up!");
+                ReloadLevel();
                 break;
 
         } 
+    }
+
+    private void ReloadLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }

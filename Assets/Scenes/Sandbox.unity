@@ -495,6 +495,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab39f41acaef90247b936048af01b95b, type: 3}
+--- !u!1 &2082252134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7109177971357963461, guid: ab39f41acaef90247b936048af01b95b, type: 3}
+  m_PrefabInstance: {fileID: 1990817363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2082252149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082252134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1387e9c71a2834185e91b91f1972cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2111700624
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +525,7 @@ GameObject:
   - component: {fileID: 2111700626}
   - component: {fileID: 2111700625}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Fuel
   m_TagString: Fuel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
