@@ -31,12 +31,10 @@ public class Movements : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            Debug.Log("Steering left");
             ApplyRotation(rotationThrust);
         } 
         else if (Input.GetKey(KeyCode.D))
         {
-            Debug.Log("Steering Right");
             ApplyRotation(-rotationThrust);
         }
     }
@@ -52,15 +50,16 @@ public class Movements : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("Space pressed - Thrusting");
+            // Debug.Log("Space pressed - Thrusting");
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
             if(!audioSource.isPlaying)
             {
-                audioSource.Play();
+                
+                // audioSource.Play();
             } 
             else
             {
-                audioSource.Stop();
+                // audioSource.Stop();
             }
         } 
 
