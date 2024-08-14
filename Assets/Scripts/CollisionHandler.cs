@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
+ 
     private void OnCollisionEnter(Collision other) {
         switch(other.gameObject.tag)
         {
@@ -12,6 +13,7 @@ public class CollisionHandler : MonoBehaviour
                 break;
 
             case "Landing Pad":
+                LoadNextLevel();
                 Debug.Log("Congrats!");
                 break;
 
@@ -25,6 +27,17 @@ public class CollisionHandler : MonoBehaviour
                 break;
 
         } 
+    }
+
+    private void LoadNextLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        if(nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextSceneIndex = 0;
+        }
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
     private void ReloadLevel()
