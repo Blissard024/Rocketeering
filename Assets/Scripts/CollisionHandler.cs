@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
  
+    [SerializeField] float levelLoadDelay = 1f;
     private void OnCollisionEnter(Collision other) {
         switch(other.gameObject.tag)
         {
@@ -13,20 +14,27 @@ public class CollisionHandler : MonoBehaviour
                 break;
 
             case "Landing Pad":
-                LoadNextLevel();
+                StartSuccessSequence();
                 Debug.Log("Congrats!");
-                break;
-
-            case "Fuel":
-                Debug.Log("You picked up fuel!");
                 break;
 
             default:
                 Debug.Log("Sorry you blew up!");
-                ReloadLevel();
+                StartCrashSequence();
                 break;
 
         } 
+    }
+
+    private void StartSuccessSequence()
+    {
+        Invoke("LoadNextLevel", levelLoadDelay);
+    }
+
+    void StartCrashSequence()
+    {
+        GetComponent<Movements>().enabled = false;
+        Invoke("ReloadLevel", levelLoadDelay);
     }
 
     private void LoadNextLevel()
