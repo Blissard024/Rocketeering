@@ -6,11 +6,13 @@ using UnityEngine;
 public class Movements : MonoBehaviour
 {
 
-    Rigidbody rb;
+    
     [SerializeField] float mainThrust = 1000f;
     [SerializeField] float rotationThrust = 10f;
+    [SerializeField] AudioClip mainEngine; 
     
     AudioSource audioSource;
+    Rigidbody rb;
 
 
     // Start is called before the first frame update
@@ -50,21 +52,17 @@ public class Movements : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            // Debug.Log("Space pressed - Thrusting");
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
             if(!audioSource.isPlaying)
             {
-                
-                // audioSource.Play();
+                audioSource.PlayOneShot(mainEngine);
             } 
-            else
-            {
-                // audioSource.Stop();
-            }
         } 
 
-       
-
+        if(Input.GetKeyUp(KeyCode.Space)) 
+        {
+            audioSource.Stop();
+        }  
 
     }
 }
