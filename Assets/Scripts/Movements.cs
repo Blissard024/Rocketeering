@@ -41,7 +41,9 @@ public class Movements : MonoBehaviour
 
     private void ApplyRotation(float rotationThrust)
     {
+        rb.freezeRotation = true; // freezing rotation so we can manually rotate
         transform.Rotate(Vector3.forward * rotationThrust * Time.deltaTime);
+        rb.freezeRotation = false; // unfreezing so the rotate system can take over
     }
 
     private void ProcessThrust()
