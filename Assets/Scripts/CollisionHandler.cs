@@ -9,7 +9,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip success; 
     [SerializeField] AudioClip defeat; 
     [SerializeField] ParticleSystem successParticles; 
-    [SerializeField] ParticleSystem crashParticles; 
+    [SerializeField] ParticleSystem crashParticles;
+
     AudioSource audioSource;
     bool isTransitioning = false;
 
